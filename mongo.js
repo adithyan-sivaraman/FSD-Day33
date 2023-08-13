@@ -11,13 +11,14 @@ db.collection.find({product_price:{$gt:600,$lt:400}})
 db.collection.find({product_price:{$gt:500}}).limit(4)
 
 // Find the product name and product material of each products
-db.collection.find({},{product_name:1,product_material:1})
+db.collection.find({},{_id:0,product_name:1,product_material:1})
 
 // Find the product with a row id of 10
 db.collection.find({id:"10"})
 
 // Find only the product name and product material
-̥
+db.collection.find({},{product_name:1,product_material:1})
+
 // Find all products which contain the value of soft in product material 
 db.collection.find({product_material:{$regex:'Soft'}})
 
